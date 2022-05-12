@@ -1,0 +1,46 @@
+buildscript {
+  repositories {
+    google()
+    jcenter()
+  }
+  dependencies {
+    classpath('com.android.tools.build:gradle:7.0.1')
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
+}
+
+
+//apply plugin: 'android'
+
+android {
+  compileSdkVersion 29
+
+  buildFeatures{
+    dataBinding {
+      enabled = true
+    }
+  }
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 29
+  }
+  lintOptions {
+    abortOnError false
+    // This is needed to avoid spurious lint errors from libthrift and log4j.
+    disable 'InvalidPackage'
+  }
+  packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+    implementation "com.zendrive.sdk.android:ZendriveSDK:8.2.0"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Nova-Zendrive",
+  "version": "1.0.0",
+  "description": "core nova zendrive",
+  "cordova": {
+    "id": "com.nova.zendrive",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "novatech",
+  "license": "ISC"
+}

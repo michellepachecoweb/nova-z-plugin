@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.nova.zendrive" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>nova-zendrive</name>
+  <js-module name="nova" src="www/nova-zendrive.js">
+    <clobbers target="nova" />
+  </js-module>
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="NRCore">
+        <param name="android-package" value="nova.zendrive.NRCore" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/nova/zendrive/NRCore.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/Constants.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/TripListDetails.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/SharedPreferenceManager.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/NotificationUtility.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/SplashActivity.java" target-dir="src/nova/zendrive" />
+    <source-file src="src/nova/zendrive/CollisionDetectedActivity.java" target-dir="src/nova/zendrive" />
+  </platform>
+  <framework src="src/build.gradle" custom="true" type="gradleReference" />
+</plugin>
